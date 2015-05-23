@@ -10,7 +10,7 @@ function MapViewerController($scope, mapRepo) {
 	init();
 
 	function init() {
-		getMap();
+		setInterval(getMap, 1000);
 	}
 
 	function getMap() {
