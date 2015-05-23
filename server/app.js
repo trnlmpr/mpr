@@ -1,19 +1,32 @@
 var express = require("express");
 var app = express();
+var server;
 
-app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-});
+initCors();
+initRoutes();
+initServer();
 
-app.get("/", function (req, res) {
-	res.send("Hello World!");
-});
+function initCors() {
+	app.use(function(req, res, next) {
+		res.header("Access-Control-Allow-Origin", "*");
+		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		next();
+	});
+}
 
-var server = app.listen(3000, function () {
-	var host = server.address().address;
-	var port = server.address().port;
+function initRoutes() {
+	var index = require("./routes/index");
+	var map = require("./routes/map");
 
-	console.log("Example app listening at http://%s:%s", host, port);
-});
+	app.use("/", index);
+	app.use("/map", map);
+}
+
+function initServer() {
+	server = app.listen(3000, function () {
+		var host = server.address().address;
+		var port = server.address().port;
+
+		console.log("Server listening at http://%s:%s", host, port);
+	});
+}

@@ -5,7 +5,7 @@ var angular = require("angular");
 function MapRepository($http) {
 	this.getMap = function() {
 		return $http({
-			url: "http://localhost:3000/"
+			url: "http://localhost:3000/map"
 		});
 	};
 }
