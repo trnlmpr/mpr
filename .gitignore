@@ -1,0 +1,6 @@
+.DS_Store
+client/dist/
+client/tmp/
+node_modules/
+*.sublime-project
+*.sublime-workspace
