@@ -1,12 +1,11 @@
 var express = require("express");
-var simulation = require("./simulation");
+var simulation = require("./models/Simulation");
 
 var app = express();
 var server;
 
 initCors();
 initRoutes();
-initSimulation();
 initServer();
 
 function initCors() {
@@ -19,14 +18,10 @@ function initCors() {
 
 function initRoutes() {
 	var index = require("./routes/");
-	var map = require("./routes/map");
+	var grid = require("./routes/grid");
 
 	app.use("/", index);
-	app.use("/map", map);
-}
-
-function initSimulation() {
-	simulation.init();
+	app.use("/grid", grid);
 }
 
 function initServer() {

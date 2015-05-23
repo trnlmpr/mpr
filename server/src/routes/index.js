@@ -1,11 +1,8 @@
 var express = require("express");
-var simulation = require("../simulation");
-
 var router = express.Router();
 
 router.get("/", function(req, res, next) {
-	var data = simulation.getData();
-	res.json(data);
+	res.send("mpr-server");
 });
 
 module.exports = router;
