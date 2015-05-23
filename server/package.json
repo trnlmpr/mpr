@@ -1,0 +1,7 @@
+{
+  "name": "mpr-server",
+  "private": true,
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
