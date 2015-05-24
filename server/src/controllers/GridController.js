@@ -20,6 +20,7 @@ function GridController() {
 		data.houses = grid.houses.map(function(house) {
 			return {
 				id: house.id,
+				location: house.location,
 				inhabitantIds: house.inhabitants.map(function(inhabitant) {
 					return inhabitant.id;
 				})

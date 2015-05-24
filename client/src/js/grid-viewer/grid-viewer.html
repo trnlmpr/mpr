@@ -1,3 +1,4 @@
 <div class="grid-viewer">
-	<pre>{{gridViewer.stuff | json}}</pre>
+	<span ng-repeat="person in gridData.persons" ng-style="person.style" class="person fa fa-user"></span>
+	<span ng-repeat="house in gridData.houses" ng-style="house.style" class="house fa fa-home"></span>
 </div>

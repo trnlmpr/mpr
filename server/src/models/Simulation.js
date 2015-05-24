@@ -1,7 +1,7 @@
 var Location = require("./Location");
 var Grid = require("./Grid");
 
-var UPDATE_INTERVAL = 100;
+var UPDATE_INTERVAL = 1000;
 
 function Simulation() {
 	var that = this;

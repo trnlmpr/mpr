@@ -15,7 +15,7 @@ function GridViewerController($scope, gridRepo) {
 
 	function getGrid() {
 		gridRepo.getGrid().success(function(data) {
-			that.stuff = data;
+			that.directive.onGetGridData(data);
 		});
 	}
 }

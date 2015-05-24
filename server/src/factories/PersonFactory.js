@@ -14,7 +14,7 @@ function PersonFactory() {
 		person.id = currentId;
 		person.name = printf("Aardvark %s", person.id);
 		person.home = house;
-		person.location = house.location;
+		person.location = house.location.clone();
 
 		return person;
 	};

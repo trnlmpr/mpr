@@ -5,6 +5,10 @@ function Location(x, y) {
 }
 
 Location.prototype = {
+	clone: function() {
+		var location = new Location(this.gridPosition.x, this.gridPosition.y);
+		return location;
+	},
 };
 
 module.exports = Location;
